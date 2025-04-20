@@ -1,136 +1,170 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juan Manuel Daza - Profile</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css"
-    />
-    <style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Manuel Daza - Profile</title>
+  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+
+    main {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--secondary-color);
+    }
+
+    @media (prefers-color-scheme: dark) {
       body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
+        background-color: black;
+        color: white;
       }
 
-      header {
-        text-align: center;
-        margin-bottom: 2rem;
+      p {
+        color: white;
       }
 
       header img {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-      }
-
-      main {
-        max-width: 800px;
-        width: 100%;
-      }
-
-      section {
-        margin-bottom: 2rem;
+        border: 2px solid white;
       }
 
       footer {
-        text-align: center;
-        font-size: 0.9rem;
-        color: var(--secondary-color);
-        margin-top: 3rem;
-        padding-top: 1rem;
-        border-top: 1px dashed var(--secondary-color);
+        color: lightgray;
+        border-top: 1px dashed lightgray;
       }
-    </style>
-  </head>
 
-  <body>
-    <header>
-      <img src="profile.jpeg" alt="Juan Manuel Daza" />
-      <h1>Juan Manuel Daza</h1>
-      <p>Software Developer</p>
-    </header>
+      em {
+        color: lightgray;
+      }
+    }
+  </style>
+</head>
 
-    <main>
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          I am a Full Stack Web Developer with over 4 years of experience,
-          specializing in technologies such as JavaScript, PHP, Node.js, and
-          Python, as well as frameworks and libraries like Vue, React,
-          CodeIgniter, Django, and Nest.js.
-        </p>
-        <p>
-          My experience in music journalism, teaching, and cultural management
-          brings a unique perspective to my work, combining creativity with
-          technical expertise.
-        </p>
-      </section>
+<body>
+  <header>
+    <img src="profile.jpeg" alt="Juan Manuel Daza" />
+    <h1>Juan Manuel Daza</h1>
+    <p>Software Developer</p>
+  </header>
 
-      <section id="learning-projects">
-        <h2>Learning Projects</h2>
-        <ul>
-          <li>
-            <strong><a href="https://github.com/juanmanueldaza/wallpapers" target="_blank">Wallpapers</a></strong> — Showcasing 35mm analog photography.
-            <br />
-            Website: <a href="https://wallpapers.ultravietnamita.com.ar" target="_blank">wallpapers.ultravietnamita.com.ar</a>
-          </li>
-          <li>
-            <strong><a href="https://github.com/roofsonfire/pokedex" target="_blank">Pokédex</a></strong> — An interactive app to explore and visualize Pokémon data, developed with the group <em>Roofs on Fire</em>.
-            <br />
-            <strong>Tech:</strong> HTML5, CSS3, JavaScript, Tone.js, PokéAPI.
-            <br />
-            Live Demo: <a href="https://roofsonfire.github.io/pokedex/" target="_blank">roofsonfire.github.io/pokedex/</a>
-          </li>
-        </ul>
-      </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a Full Stack Web Developer with over 4 years of experience,
+        specializing in technologies such as JavaScript, PHP, Node.js, and
+        Python, as well as frameworks and libraries like Vue, React,
+        CodeIgniter, Django, and Nest.js.
+      </p>
+      <p>
+        My experience in music journalism, teaching, and cultural management
+        brings a unique perspective to my work, combining creativity with
+        technical expertise.
+      </p>
+    </section>
 
-      <section id="open-source-contributions">
-        <h2>Open Source Contributions</h2>
-        <ul>
-          <li>
-            <strong><a href="https://blog.colmena.media/" target="_blank">Colmena Project</a></strong> — Free and secure tools for community media.
-            <ul>
-              <li><a href="https://gitlab.com/colmena-project/dev/backend" target="_blank">Backend Repo</a>: Added endpoints for new features.</li>
-              <li><a href="https://gitlab.com/colmena-project/dev/frontend" target="_blank">Frontend Repo</a>: Created UI for new features.</li>
-            </ul>
-            <a href="https://gitlab.com/users/juanmanueldaza/contributed" target="_blank">See all my GitLab contributions</a>
-          </li>
-          <li>
-            <strong><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">OpenHands</a></strong> — Platform for AI-powered development agents.
-            <br />
-            <a href="https://github.com/All-Hands-AI/OpenHands/commit/f5fccab1f60f70278902b9845bdee4d8a3e3b471" target="_blank">Commit f5fccab</a>: Added GitLab support to the Resolver.
-            <br />
-            Docs: <a href="https://docs.all-hands.dev" target="_blank">docs.all-hands.dev</a>
-          </li>
-        </ul>
-      </section>
+    <section id="learning-projects">
+      <h2>Learning Projects</h2>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/juanmanueldaza/wallpapers" target="_blank">Wallpapers</a></strong> —
+          Showcasing 35mm analog photography.
+          <br />
+          Website: <a href="https://wallpapers.ultravietnamita.com.ar"
+            target="_blank">wallpapers.ultravietnamita.com.ar</a>
+        </li>
+        <li>
+          <strong><a href="https://github.com/roofsonfire/pokedex" target="_blank">Pokédex</a></strong> — An interactive
+          app to explore and visualize Pokémon data, developed with the group <em>Roofs on Fire</em>.
+          <br />
+          <strong>Tech:</strong> HTML5, CSS3, JavaScript, Tone.js, PokéAPI.
+          <br />
+          Live Demo: <a href="https://roofsonfire.github.io/pokedex/" target="_blank">roofsonfire.github.io/pokedex/</a>
+        </li>
+      </ul>
+    </section>
 
-      <section id="what-drives-me">
-        <h2>What Drives Me</h2>
-        <p>
-          I aim to grow as an <strong>innovative software developer</strong>,
-          pushing the boundaries of tech and creativity. I want to build solutions
-          that inspire connection and curiosity.
-        </p>
-      </section>
+    <section id="open-source-contributions">
+      <h2>Open Source Contributions</h2>
+      <ul>
+        <li>
+          <strong><a href="https://blog.colmena.media/" target="_blank">Colmena Project</a></strong> — Free and secure
+          tools for community media.
+          <ul>
+            <li><a href="https://gitlab.com/colmena-project/dev/backend" target="_blank">Backend Repo</a>: Added
+              endpoints for new features.</li>
+            <li><a href="https://gitlab.com/colmena-project/dev/frontend" target="_blank">Frontend Repo</a>: Created UI
+              for new features.</li>
+          </ul>
+          <a href="https://gitlab.com/users/juanmanueldaza/contributed" target="_blank">See all my GitLab
+            contributions</a>
+        </li>
+        <li>
+          <strong><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">OpenHands</a></strong> — Platform
+          for AI-powered development agents.
+          <br />
+          <a href="https://github.com/All-Hands-AI/OpenHands/commit/f5fccab1f60f70278902b9845bdee4d8a3e3b471"
+            target="_blank">Commit f5fccab</a>: Added GitLab support to the Resolver.
+          <br />
+          Docs: <a href="https://docs.all-hands.dev" target="_blank">docs.all-hands.dev</a>
+        </li>
+      </ul>
+    </section>
 
-      <section id="socials">
-        <h2>Social Networks</h2>
-        <ul>
-          <li><a href="https://linkedin.com/in/juanmanueldaza" target="_blank">LinkedIn</a></li>
-          <li><a href="https://github.com/juanmanueldaza" target="_blank">GitHub</a></li>
-          <li><a href="https://gitlab.com/juanmanueldaza" target="_blank">GitLab</a></li>
-          <li>Email me at <a href="mailto:juanmanueldaza@gmail.com">juanmanueldaza@gmail.com</a></li>
-        </ul>
-      </section>
-    </main>
+    <section id="what-drives-me">
+      <h2>What Drives Me</h2>
+      <p>
+        I aim to grow as an <strong>innovative software developer</strong>,
+        pushing the boundaries of tech and creativity. I want to build solutions
+        that inspire connection and curiosity.
+      </p>
+    </section>
 
-    <footer>
-      <p>Built with ❤️ and Terminal CSS</p>
-    </footer>
-  </body>
+    <section id="socials">
+      <h2>Find me:</h2>
+      <ul>
+        <li><a href="https://linkedin.com/in/juanmanueldaza" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/juanmanueldaza" target="_blank">GitHub</a></li>
+        <li><a href="https://gitlab.com/juanmanueldaza" target="_blank">GitLab</a></li>
+        <li><a href="mailto:juanmanueldaza@gmail.com">juanmanueldaza@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ and Terminal CSS</p>
+  </footer>
+</body>
+
 </html>
