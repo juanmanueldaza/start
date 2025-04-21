@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Manuel Daza - Profile</title>
   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
-  
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Juan Manuel Daza - Profile" />
-  <meta property="og:description" content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
+  <meta property="og:description"
+    content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
   <meta property="og:image" content="https://daza.ar/profile5.png" />
   <meta property="og:url" content="https://daza.ar" />
   <meta property="og:type" content="website" />
@@ -17,7 +18,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Juan Manuel Daza - Profile" />
-  <meta name="twitter:description" content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
+  <meta name="twitter:description"
+    content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
   <meta name="twitter:image" content="https://daza.ar/profile5.png" />
   <meta name="twitter:site" content="@your_twitter_handle" />
   <style>
@@ -39,6 +41,7 @@
       border-radius: 50%;
       width: 150px;
       height: 150px;
+      transition: opacity 0.5s ease-in-out;
     }
 
     main {
@@ -170,11 +173,37 @@
         <li><a href="mailto:juanmanueldaza@gmail.com">juanmanueldaza@gmail.com</a></li>
       </ul>
     </section>
+    <section>
+      <div>
+        <p class="logo terminal-prompt"></p>
+      </div>
+    </section>
   </main>
+  <script>
+    const profileImage = document.querySelector('header img');
+    let currentImage = 5;
 
-  <footer>
-    <p>Built with ❤️ and Terminal CSS</p>
-  </footer>
+    function rotateProfileImage() {
+      currentImage = currentImage === 5 ? 1 : currentImage + 1;
+      profileImage.src = `profile${currentImage}.png`;
+    }
+
+    // Change image every 3 seconds
+    setInterval(rotateProfileImage, Math.floor(Math.random() * 1000));
+
+    // Add fade transition to the image
+    profileImage.style.transition = 'opacity 0.5s ease-in-out';
+
+    // Add fade effect when image changes
+    profileImage.addEventListener('load', () => {
+      profileImage.style.opacity = '1';
+    });
+
+    profileImage.addEventListener('beforeload', () => {
+      profileImage.style.opacity = '0.5';
+    });
+  </script>
+
 </body>
 
 </html>
