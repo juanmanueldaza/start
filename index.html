@@ -39,6 +39,74 @@
       border-radius: 50%;
       width: 150px;
       height: 150px;
+      transition: opacity 0.5s ease-in-out;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        filter: brightness(100%) grayscale(0%);        
+      }
+
+      5% {
+        filter: invert(0%);
+      }
+
+      10% {
+        filter: blur(50%);
+      }
+
+      15% {
+        filter: invert(100%);
+      }
+
+      25% {
+        filter: grayscale(30%);
+      }
+
+      30% {
+        filter: invert(0%);
+      }
+
+      35% {
+        filter: blur(75%);
+      }
+
+      50% {
+        filter: brightness(10%) grayscale(70%);
+      }
+
+      55% {
+        filter: invert(0%);
+      }
+
+      60% {
+        filter: blur(50%);
+      }
+
+      65% {
+        filter: invert(100%);
+      }
+
+      75% {
+        filter: brightness(100%);
+      }
+
+      80% {
+        filter: invert(0%);
+      }
+
+      85% {
+        filter: grayscale(30%);
+      }
+
+      90% {
+        filter: invert(100%);
+      }
+
+      100% {
+        filter: brightness(100%) grayscale(100%);
+      }
     }
 
     main {
@@ -59,6 +127,19 @@
       border-top: 1px dashed var(--secondary-color);
     }
 
+    #socials div ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    #socials div a {
+      flex: 1;
+      filter: invert(0%);
+    }
+
     @media (prefers-color-scheme: dark) {
       body {
         background-color: black;
@@ -77,13 +158,17 @@
       em {
         color: lightgray;
       }
+
+      #socials img {
+        filter: invert(100%);
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="profile5.png" alt="Juan Manuel Daza" />
+    <img src="assets/pictures/profile5.png" alt="Juan Manuel Daza" />
     <h1>Juan Manuel Daza</h1>
     <p>Software Developer</p>
   </header>
@@ -170,7 +255,37 @@
         <li><a href="mailto:juanmanueldaza@gmail.com">juanmanueldaza@gmail.com</a></li>
       </ul>
     </section>
+    <section>
+      <div>
+        <p class="logo terminal-prompt"></p>
+      </div>
+    </section>
   </main>
+  <script>
+    const profileImage = document.querySelector('header img');
+    let currentImage = 5;
+
+    function rotateProfileImage() {
+      currentImage = currentImage === 5 ? 1 : currentImage + 1;
+      profileImage.src = `assets/pictures/profile${currentImage}.png`;
+    }
+
+    // Change image every 3 seconds
+    setInterval(rotateProfileImage, Math.floor(Math.random() * 1000));
+
+    // Add fade transition to the image
+    profileImage.style.transition = 'opacity 0.5s ease-in-out';
+
+    // Add fade effect when image changes
+    profileImage.addEventListener('load', () => {
+      profileImage.style.opacity = '1';
+    });
+
+    profileImage.addEventListener('beforeload', () => {
+      profileImage.style.opacity = '0.5';
+    });
+  </script>
+
 
   <footer>
     <p>Built with ❤️ and Terminal CSS</p>
