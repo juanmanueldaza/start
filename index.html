@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Manuel Daza - Profile</title>
   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
-  
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Juan Manuel Daza - Profile" />
-  <meta property="og:description" content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
+  <meta property="og:description"
+    content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
   <meta property="og:image" content="https://daza.ar/profile5.png" />
   <meta property="og:url" content="https://daza.ar" />
   <meta property="og:type" content="website" />
@@ -17,7 +18,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Juan Manuel Daza - Profile" />
-  <meta name="twitter:description" content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
+  <meta name="twitter:description"
+    content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
   <meta name="twitter:image" content="https://daza.ar/profile5.png" />
   <meta name="twitter:site" content="@your_twitter_handle" />
   <style>
@@ -28,6 +30,13 @@
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+    }
+
+
+    a:hover {
+      text-decoration: none;
+      background: none;
+      filter: invert(80%);
     }
 
     header {
@@ -100,17 +109,36 @@
       border-top: 1px dashed var(--secondary-color);
     }
 
-    #socials div ul {
-      list-style: none;
-      padding: 0;
+    .social-icons {
       display: flex;
-      gap: 1rem;
       justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
     }
 
-    #socials div a {
-      flex: 1;
-      filter: invert(0%);
+    .social-icons a {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+      .social-icons img {
+        filter: invert(70%);
+      }
+
+      .social-icons img:hover {
+        filter: invert(100%);
+      }
     }
 
     @media (prefers-color-scheme: dark) {
@@ -150,15 +178,15 @@
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I am a Full Stack Web Developer with over 4 years of experience,
-        specializing in technologies such as JavaScript, PHP, Node.js, and
-        Python, as well as frameworks and libraries like Vue, React,
-        CodeIgniter, Django, and Nest.js.
+        I am a Full Stack Web Developer with over 4 years of experience, specializing in technologies such as
+        JavaScript, PHP, Node.js, and Python, as well as frameworks and libraries like Vue, React, CodeIgniter, Django,
+        and Nest.js. I enjoy solving complex problems and continuously learning to stay at the forefront of the
+        ever-changing technological landscape.
       </p>
       <p>
-        My experience in music journalism, teaching, and cultural management
-        brings a unique perspective to my work, combining creativity with
-        technical expertise.
+        My experience in music journalism, teaching, and cultural management brings a unique perspective to my work,
+        combining creativity with technical expertise. I am driven by the desire to transform the way we interact with
+        technology, merging innovation and art to create meaningful solutions.
       </p>
     </section>
 
@@ -191,22 +219,31 @@
         that inspire connection and curiosity.
       </p>
     </section>
-
-    <section id="socials">
-      <h2>Find me:</h2>
-      <ul>
-        <li><a href="https://linkedin.com/in/juanmanueldaza" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/juanmanueldaza" target="_blank">GitHub</a></li>
-        <li><a href="https://gitlab.com/juanmanueldaza" target="_blank">GitLab</a></li>
-        <li><a href="mailto:juanmanueldaza@gmail.com">juanmanueldaza@gmail.com</a></li>
-      </ul>
-    </section>
     <section>
       <div>
         <p class="logo terminal-prompt"></p>
       </div>
     </section>
   </main>
+  <footer>
+    <section id="socials">
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/juanmanueldaza" target="_blank" title="LinkedIn">
+          <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/juanmanueldaza" target="_blank" title="GitHub">
+          <img src="assets/icons/square-github.svg" alt="GitHub">
+        </a>
+        <a href="https://gitlab.com/juanmanueldaza" target="_blank" title="GitLab">
+          <img src="assets/icons/square-gitlab.svg" alt="GitLab">
+        </a>
+        <a href="mailto:juanmanueldaza@gmail.com" title="Email">
+          <img src="assets/icons/envelope.svg" alt="Email">
+        </a>
+      </div>
+    </section>
+    <p>Built with ❤️ and Terminal CSS</p>
+  </footer>
   <script>
     const profileImage = document.querySelector('header img');
     let currentImage = 5;
@@ -231,11 +268,6 @@
       profileImage.style.opacity = '0.5';
     });
   </script>
-
-
-  <footer>
-    <p>Built with ❤️ and Terminal CSS</p>
-  </footer>
 </body>
 
 </html>
