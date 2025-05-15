@@ -51,8 +51,36 @@
     .social-icons img { width: 24px; height: 24px; }
     .social-icons a:hover { transform: translateY(-3px); }
     @keyframes pulse {
-      0% { filter: brightness(150%) saturate(200%) hue-rotate(0deg); }
-      100% { filter: brightness(150%) saturate(200%) hue-rotate(360deg); }
+      0% {
+        filter: brightness(150%) saturate(200%) hue-rotate(0deg);
+        border-style: dashed;
+        border-color: #ff00ff;
+      }
+      20% {
+        filter: contrast(200%) brightness(150%) blur(2px) hue-rotate(90deg);
+        border-style: double;
+        border-color: #00ffff;
+      }
+      40% {
+        filter: sepia(50%) brightness(150%) contrast(150%) hue-rotate(180deg);
+        border-style: solid;
+        border-color: #ff0099;
+      }
+      60% {
+        filter: invert(75%) saturate(200%) brightness(150%) blur(1px);
+        border-style: dotted;
+        border-color: #00ff99;
+      }
+      80% {
+        filter: contrast(200%) brightness(200%) hue-rotate(270deg) saturate(300%);
+        border-style: groove;
+        border-color: #ff00ff;
+      }
+      100% {
+        filter: brightness(150%) saturate(200%) hue-rotate(360deg);
+        border-style: dashed;
+        border-color: #00ffff;
+      }
     }
     @media (prefers-color-scheme: dark) {
       body { background: black; color: #f3f3f3; }
@@ -125,5 +153,21 @@
     </div>
     <p>Built with ❤️ and Terminal CSS</p>
   </footer>
+  <script>
+    const profileImage = document.querySelector('header img');
+    let currentImage = 5;
+    function rotateProfileImage() {
+      currentImage = currentImage === 5 ? 1 : currentImage + 1;
+      profileImage.style.opacity = '0.5';
+      setTimeout(() => {
+        profileImage.src = `assets/pictures/profile${currentImage}.png`;
+        profileImage.style.opacity = '1';
+      }, 250);
+    }
+    // Change image every 3 seconds
+    setInterval(rotateProfileImage, 3000);
+    // Add fade transition to the image
+    profileImage.style.transition = 'opacity 0.5s ease-in-out';
+  </script>
 </body>
 </html>
