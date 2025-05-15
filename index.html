@@ -18,38 +18,65 @@
       text-align: center;
       margin-bottom: 2rem;
     }
-    header img {
-      border-radius: 10%;
-      border: 2px solid var(--primary-color);
+    .profile-img-duplication {
+      position: relative;
+      display: inline-block;
       width: 150px;
       height: 150px;
-      animation: pulse 10s infinite alternate;
     }
-    main {
-      max-width: 800px;
-      width: 100%;
-    }
-    section { margin-bottom: 2rem; }
-    .project-preview {
-      margin-top: 1rem;
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
-    .project-preview iframe {
+    .profile-img-duplication img {
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%; border: none;
+      top: 0; left: 0;
+      width: 150px;
+      height: 150px;
+      border-radius: 10%;
+      border: 2px solid var(--primary-color);
+      animation:
+        pulse 10s infinite alternate,
+        duplicate-left 4s infinite alternate;
+      transition: opacity 0.5s;
+      will-change: transform, opacity, filter, border-color, border-style;
     }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1rem 0;
+    .profile-img-duplication img.dup1 {
+      z-index: 1;
+      animation:
+        pulse 10s infinite alternate,
+        duplicate-left 4s infinite alternate;
     }
-    .social-icons img { width: 24px; height: 24px; }
-    .social-icons a:hover { transform: translateY(-3px); }
+    .profile-img-duplication img.dup2 {
+      z-index: 2;
+      animation:
+        pulse 10s infinite alternate,
+        duplicate-right 4s infinite alternate;
+    }
+    @keyframes duplicate-left {
+      0%, 100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      40% {
+        transform: translateX(-30px);
+        opacity: 0.5;
+      }
+      60% {
+        transform: translateX(-30px);
+        opacity: 0.5;
+      }
+    }
+    @keyframes duplicate-right {
+      0%, 100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      40% {
+        transform: translateX(30px);
+        opacity: 0.5;
+      }
+      60% {
+        transform: translateX(30px);
+        opacity: 0.5;
+      }
+    }
     @keyframes pulse {
       0% {
         filter: brightness(150%) saturate(200%) hue-rotate(0deg);
@@ -82,6 +109,31 @@
         border-color: #00ffff;
       }
     }
+    main {
+      max-width: 800px;
+      width: 100%;
+    }
+    section { margin-bottom: 2rem; }
+    .project-preview {
+      margin-top: 1rem;
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .project-preview iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+    }
+    .social-icons img { width: 24px; height: 24px; }
+    .social-icons a:hover { transform: translateY(-3px); }
     @media (prefers-color-scheme: dark) {
       body { background: black; color: #f3f3f3; }
       p, h1, h2, h3, h4, h5, h6, a, em, strong, ul, li, footer {
@@ -98,7 +150,10 @@
 </head>
 <body>
   <header>
-    <img src="assets/pictures/profile5.png" alt="Juan Manuel Daza" />
+    <div class="profile-img-duplication">
+      <img class="dup1" src="assets/pictures/profile5.png" alt="Juan Manuel Daza" />
+      <img class="dup2" src="assets/pictures/profile5.png" alt="Juan Manuel Daza duplicate" />
+    </div>
     <h1>Juan Manuel Daza</h1>
     <p>Software Developer</p>
   </header>
@@ -154,20 +209,22 @@
     <p>Built with ❤️ and Terminal CSS</p>
   </footer>
   <script>
-    const profileImage = document.querySelector('header img');
+    const profileImgs = document.querySelectorAll('.profile-img-duplication img');
     let currentImage = 5;
     function rotateProfileImage() {
       currentImage = currentImage === 5 ? 1 : currentImage + 1;
-      profileImage.style.opacity = '0.5';
-      setTimeout(() => {
-        profileImage.src = `assets/pictures/profile${currentImage}.png`;
-        profileImage.style.opacity = '1';
-      }, 250);
+      profileImgs.forEach(img => {
+        img.style.opacity = '0.5';
+        setTimeout(() => {
+          img.src = `assets/pictures/profile${currentImage}.png`;
+          img.style.opacity = '1';
+        }, 250);
+      });
     }
-    // Change image every 3 seconds
     setInterval(rotateProfileImage, 3000);
-    // Add fade transition to the image
-    profileImage.style.transition = 'opacity 0.5s ease-in-out';
+    profileImgs.forEach(img => {
+      img.style.transition = 'opacity 0.5s ease-in-out';
+    });
   </script>
 </body>
 </html>
