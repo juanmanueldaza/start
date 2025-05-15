@@ -1,273 +1,129 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Manuel Daza - Profile</title>
   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Juan Manuel Daza - Profile" />
-  <meta property="og:description"
-    content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
-  <meta property="og:image" content="https://daza.ar/profile5.png" />
-  <meta property="og:url" content="https://daza.ar" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Juan Manuel Daza - Profile" />
-  <meta name="twitter:description"
-    content="Full Stack Web Developer with over 4 years of experience in JavaScript, PHP, Node.js, and Python." />
-  <meta name="twitter:image" content="https://daza.ar/profile5.png" />
-  <meta name="twitter:site" content="@your_twitter_handle" />
   <style>
     body {
-      background-color: white;
+      background: white;
       color: black;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
     }
-
-
-    a:hover {
-      text-decoration: none;
-      background: none;
-      filter: invert(80%);
-    }
-
     header {
       text-align: center;
       margin-bottom: 2rem;
     }
-
     header img {
       border-radius: 10%;
       border: 2px solid var(--primary-color);
       width: 150px;
       height: 150px;
-      transition: opacity 3s ease-in-out;
       animation: pulse 10s infinite alternate;
     }
-
-    @keyframes pulse {
-      0% {
-        filter: brightness(150%) saturate(200%) hue-rotate(0deg);
-        border-style: dashed;
-        border-color: #ff00ff;
-      }
-
-      20% {
-        filter: contrast(200%) brightness(150%) blur(2px) hue-rotate(90deg);
-        border-style: double;
-        border-color: #00ffff;
-      }
-
-      40% {
-        filter: sepia(50%) brightness(150%) contrast(150%) hue-rotate(180deg);
-        border-style: solid;
-        border-color: #ff0099;
-      }
-
-      60% {
-        filter: invert(75%) saturate(200%) brightness(150%) blur(1px);
-        border-style: dotted;
-        border-color: #00ff99;
-      }
-
-      80% {
-        filter: contrast(200%) brightness(200%) hue-rotate(270deg) saturate(300%);
-        border-style: groove;
-        border-color: #ff00ff;
-      }
-
-      100% {
-        filter: brightness(150%) saturate(200%) hue-rotate(360deg);
-        border-style: dashed;
-        border-color: #00ffff;
-      }
-    }
-
     main {
       max-width: 800px;
       width: 100%;
     }
-
-    section {
-      margin-bottom: 2rem;
+    section { margin-bottom: 2rem; }
+    .project-preview {
+      margin-top: 1rem;
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      background: #f5f5f5;
     }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--secondary-color);
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px dashed var(--secondary-color);
+    .project-preview iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: none;
     }
-
     .social-icons {
       display: flex;
       justify-content: center;
       gap: 2rem;
       margin: 1rem 0;
     }
-
-    .social-icons a {
-      display: inline-block;
-      transition: transform 0.3s ease;
+    .social-icons img { width: 24px; height: 24px; }
+    .social-icons a:hover { transform: translateY(-3px); }
+    @keyframes pulse {
+      0% { filter: brightness(150%) saturate(200%) hue-rotate(0deg); }
+      100% { filter: brightness(150%) saturate(200%) hue-rotate(360deg); }
     }
-
-    .social-icons img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .social-icons a:hover {
-      transform: translateY(-3px);
-    }
-
-
     @media (prefers-color-scheme: dark) {
-      .social-icons img {
-        filter: invert(70%);
+      body { background: black; color: #f3f3f3; }
+      p, h1, h2, h3, h4, h5, h6, a, em, strong, ul, li, footer {
+        color: #f3f3f3 !important;
       }
-
-      .social-icons img:hover {
-        filter: invert(100%);
-      }
+      a { text-decoration: underline; }
+      .project-preview { background: #1a1a1a; }
+      .social-icons img { filter: invert(70%); }
     }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: black;
-        color: white;
-      }
-
-      p {
-        color: white;
-      }
-
-      footer {
-        color: lightgray;
-        border-top: 1px dashed lightgray;
-      }
-
-      em {
-        color: lightgray;
-      }
-
-      #socials img {
-        filter: invert(100%);
-      }
+    @media (max-width: 768px) {
+      .project-preview { padding-bottom: 150%; }
     }
   </style>
 </head>
-
 <body>
   <header>
     <img src="assets/pictures/profile5.png" alt="Juan Manuel Daza" />
     <h1>Juan Manuel Daza</h1>
     <p>Software Developer</p>
   </header>
-
   <main>
-    <section id="about">
+    <section>
       <h2>About Me</h2>
       <p>
-        I am a Full Stack Web Developer with over 4 years of experience, specializing in technologies such as
-        JavaScript, PHP, Node.js, and Python, as well as frameworks and libraries like Vue, React, CodeIgniter, Django,
-        and Nest.js. I enjoy solving complex problems and continuously learning to stay at the forefront of the
-        ever-changing technological landscape.
+        I am a Full Stack Web Developer with over 4 years of experience, specializing in JavaScript, PHP, Node.js, and Python, as well as frameworks like Vue, React, CodeIgniter, Django, and Nest.js.
       </p>
       <p>
-        My experience in music journalism, teaching, and cultural management brings a unique perspective to my work,
-        combining creativity with technical expertise. I am driven by the desire to transform the way we interact with
-        technology, merging innovation and art to create meaningful solutions.
-      </p>
-    </section>
-
-    <section id="learning-projects">
-      <h2>Learning Projects</h2>
-      <ul>
-        <li>
-          <strong><a href="https://github.com/juanmanueldaza/wallpapers" target="_blank">Wallpapers</a></strong> —
-          Showcasing 35mm analog photography.
-          <br />
-          Website: <a href="https://wallpapers.ultravietnamita.com.ar"
-            target="_blank">wallpapers.ultravietnamita.com.ar</a>
-        </li>
-        <li>
-          <strong><a href="https://github.com/roofsonfire/pokedex" target="_blank">Pokédex</a></strong> — An interactive
-          app to explore and visualize Pokémon data, developed with the group <em>Roofs on Fire</em>.
-          <br />
-          <strong>Tech:</strong> HTML5, CSS3, JavaScript, Tone.js, PokéAPI.
-          <br />
-          Live Demo: <a href="https://roofsonfire.github.io/pokedex/" target="_blank">roofsonfire.github.io/pokedex/</a>
-        </li>
-      </ul>
-    </section>
-
-    <section id="what-drives-me">
-      <h2>What Drives Me</h2>
-      <p>
-        I aim to grow as an <strong>innovative software developer</strong>,
-        pushing the boundaries of tech and creativity. I want to build solutions
-        that inspire connection and curiosity.
+        My background in music journalism, teaching, and cultural management brings creativity to my technical work. I aim to merge innovation and art to create meaningful solutions.
       </p>
     </section>
     <section>
+      <h2>Fun Projects</h2>
       <div>
-        <p class="logo terminal-prompt"></p>
+        <strong><a href="https://github.com/juanmanueldaza/wallpapers" target="_blank">Wallpapers</a></strong> — 35mm analog photography.<br />
+        <a href="https://wallpapers.ultravietnamita.com.ar" target="_blank">wallpapers.ultravietnamita.com.ar</a>
+        <div class="project-preview">
+          <iframe src="https://wallpapers.ultravietnamita.com.ar" title="Wallpapers Project" loading="lazy"></iframe>
+        </div>
       </div>
+      <div style="margin-top:2rem;">
+        <strong><a href="https://github.com/roofsonfire/pokedex" target="_blank">Pokédex</a></strong> — Interactive Pokémon app with <em>Roofs on Fire</em>.<br />
+        <a href="https://roofsonfire.github.io/pokedex/" target="_blank">roofsonfire.github.io/pokedex/</a>
+        <div class="project-preview">
+          <iframe src="https://roofsonfire.github.io/pokedex/" title="Pokedex Project" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>What Drives Me</h2>
+      <p>
+        I aim to grow as an <strong>innovative software developer</strong>, building solutions that inspire connection and curiosity.
+      </p>
     </section>
   </main>
   <footer>
-    <section id="socials">
-      <div class="social-icons">
-        <a href="https://linkedin.com/in/juanmanueldaza" target="_blank" title="LinkedIn">
-          <img src="assets/icons/linkedin.svg" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/juanmanueldaza" target="_blank" title="GitHub">
-          <img src="assets/icons/square-github.svg" alt="GitHub">
-        </a>
-        <a href="https://gitlab.com/juanmanueldaza" target="_blank" title="GitLab">
-          <img src="assets/icons/square-gitlab.svg" alt="GitLab">
-        </a>
-        <a href="mailto:juanmanueldaza@gmail.com" title="Email">
-          <img src="assets/icons/envelope.svg" alt="Email">
-        </a>
-      </div>
-    </section>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/juanmanueldaza" target="_blank" title="LinkedIn">
+        <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/juanmanueldaza" target="_blank" title="GitHub">
+        <img src="assets/icons/square-github.svg" alt="GitHub">
+      </a>
+      <a href="https://gitlab.com/juanmanueldaza" target="_blank" title="GitLab">
+        <img src="assets/icons/square-gitlab.svg" alt="GitLab">
+      </a>
+      <a href="mailto:juanmanueldaza@gmail.com" title="Email">
+        <img src="assets/icons/envelope.svg" alt="Email">
+      </a>
+    </div>
     <p>Built with ❤️ and Terminal CSS</p>
   </footer>
-  <script>
-    const profileImage = document.querySelector('header img');
-    let currentImage = 5;
-
-    function rotateProfileImage() {
-      currentImage = currentImage === 5 ? 1 : currentImage + 1;
-      profileImage.src = `assets/pictures/profile${currentImage}.png`;
-    }
-
-    // Change image every 3 seconds
-    setInterval(rotateProfileImage, Math.floor(Math.random() * 1000));
-
-    // Add fade transition to the image
-    profileImage.style.transition = 'opacity 0.5s ease-in-out';
-
-    // Add fade effect when image changes
-    profileImage.addEventListener('load', () => {
-      profileImage.style.opacity = '1';
-    });
-
-    profileImage.addEventListener('beforeload', () => {
-      profileImage.style.opacity = '0.5';
-    });
-  </script>
 </body>
-
 </html>
