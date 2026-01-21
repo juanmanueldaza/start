@@ -9,8 +9,77 @@
         />
         <title>Juan Manuel Daza - Portfolio</title>
 
-        <!-- Favicon -->
+        <!-- Author & Theme -->
+        <meta name="author" content="Juan Manuel Daza" />
+        <meta name="theme-color" content="#0D1B2A" />
+        <meta name="color-scheme" content="dark" />
+
+        <!-- Canonical & Language Alternates -->
+        <link rel="canonical" href="https://daza.ar/" />
+        <link rel="alternate" hreflang="en" href="https://daza.ar/?lang=en" />
+        <link rel="alternate" hreflang="es" href="https://daza.ar/?lang=es" />
+        <link rel="alternate" hreflang="x-default" href="https://daza.ar/" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://daza.ar/" />
+        <meta
+            property="og:title"
+            content="Juan Manuel Daza - Full Stack AI Engineer"
+        />
+        <meta
+            property="og:description"
+            content="Building digital solutions and hunting Agentic AI. I studied words before I learned code. That's why I can make machines speak human."
+        />
+        <meta
+            property="og:image"
+            content="https://daza.ar/assets/pictures/profile5.png"
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="es_AR" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="Juan Manuel Daza - Full Stack AI Engineer"
+        />
+        <meta
+            name="twitter:description"
+            content="Building digital solutions and hunting Agentic AI."
+        />
+        <meta
+            name="twitter:image"
+            content="https://daza.ar/assets/pictures/profile5.png"
+        />
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Juan Manuel Daza",
+                "jobTitle": "Full Stack AI Engineer",
+                "url": "https://daza.ar",
+                "image": "https://daza.ar/assets/pictures/profile5.png",
+                "description": "Building digital solutions and hunting Agentic AI. I studied words before I learned code. That's why I can make machines speak human.",
+                "sameAs": [
+                    "https://linkedin.com/in/juanmanueldaza",
+                    "https://github.com/juanmanueldaza",
+                    "https://gitlab.com/juanmanueldaza"
+                ],
+                "email": "mailto:juanmanueldaza@gmail.com"
+            }
+        </script>
+
+        <!-- Favicon & Icons -->
         <link rel="icon" type="image/png" href="assets/pictures/profile5.png" />
+        <link rel="apple-touch-icon" href="assets/pictures/profile5.png" />
+        <link rel="manifest" href="manifest.json" />
+
+        <!-- Preconnect for Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
         <!-- Styles -->
         <link rel="stylesheet" href="css/styles.css" />
@@ -42,13 +111,22 @@
             <main id="main-content">
                 <!-- Hero Section -->
                 <section class="hero">
-                    <img
-                        src="assets/pictures/profile5.png"
-                        alt="Juan Manuel Daza"
-                        class="profile-image"
-                        width="150"
-                        height="150"
-                    />
+                    <picture>
+                        <source
+                            srcset="assets/pictures/profile5.webp"
+                            type="image/webp"
+                        />
+                        <img
+                            src="assets/pictures/profile5.png"
+                            alt="Juan Manuel Daza"
+                            class="profile-image"
+                            width="150"
+                            height="150"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                        />
+                    </picture>
                     <div class="hero-text">
                         <h1>Juan Manuel Daza</h1>
                         <p class="subtitle" data-i18n="subtitle">

@@ -619,5 +619,3 @@ Base styles target mobile, then enhance with `min-width` media queries:
 - [x] Open questions resolved
 
 ---
-
-*Document created by Claude | Last updated: January 2026*

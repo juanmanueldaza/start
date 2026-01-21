@@ -1,0 +1,21 @@
+{
+    "name": "Juan Manuel Daza - Portfolio",
+    "short_name": "JM Daza",
+    "description": "Full Stack AI Engineer. Building digital solutions and hunting Agentic AI.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0D1B2A",
+    "theme_color": "#0D1B2A",
+    "icons": [
+        {
+            "src": "assets/pictures/profile5.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/pictures/profile5.webp",
+            "sizes": "500x500",
+            "type": "image/webp"
+        }
+    ]
+}
