@@ -1,324 +1,106 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Juan Manuel Daza - Full Stack AI Engineer. Building digital solutions and hunting Agentic AI."
+        />
+        <title>Juan Manuel Daza - Portfolio</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juan Manuel Daza - Profile</title>
-  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
-  <style>
-    body {
-      background: white;
-      color: black;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-    }
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/pictures/profile5.png" />
 
-    /* Remove background and outline on hover/focus for all links */
-    a:hover,
-    a:focus {
-      background: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-    }
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <!-- Skip Link for Accessibility -->
+        <a href="#main-content" class="skip-link">Skip to content</a>
 
-    a:hover,
-    a:focus {
-      text-decoration: none;
-      color: inherit;
-    }
+        <div class="container">
+            <!-- Header with Language Toggle -->
+            <header>
+                <nav class="lang-toggle" aria-label="Language selection">
+                    <button
+                        type="button"
+                        data-lang="en"
+                        class="active"
+                        aria-pressed="true"
+                    >
+                        EN
+                    </button>
+                    <span class="separator" aria-hidden="true">|</span>
+                    <button type="button" data-lang="es" aria-pressed="false">
+                        ES
+                    </button>
+                </nav>
+            </header>
 
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+            <!-- Main Content -->
+            <main id="main-content">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <img
+                        src="assets/pictures/profile5.png"
+                        alt="Juan Manuel Daza"
+                        class="profile-image"
+                        width="150"
+                        height="150"
+                    />
+                    <div class="hero-text">
+                        <h1>Juan Manuel Daza</h1>
+                        <p class="subtitle" data-i18n="subtitle">
+                            Full Stack AI Engineer
+                        </p>
+                    </div>
+                </section>
 
-    .profile-img-duplication {
-      position: relative;
-      display: inline-block;
-      width: 150px;
-      height: 150px;
-    }
+                <!-- About Section -->
+                <section class="about">
+                    <h2 data-i18n="aboutTitle">About</h2>
+                    <p data-i18n="bio">
+                        I'm not a pirate, but I've been chasing treasure for 6
+                        years—building digital solutions and hunting Agentic AI.
+                        I studied words before I learned code. That's why I can
+                        make machines speak human.
+                    </p>
+                </section>
 
-    .profile-img-duplication img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 150px;
-      height: 150px;
-      border-radius: 10%;
-      border: 2px solid var(--primary-color);
-      animation:
-        pulse 10s infinite alternate,
-        duplicate-left 4s infinite alternate;
-      transition: opacity 0.5s;
-      will-change: transform, opacity, filter, border-color, border-style;
-    }
+                <!-- Projects Section -->
+                <section class="projects">
+                    <h2 data-i18n="projectsTitle">Projects</h2>
+                    <div class="projects-grid" id="projects-container">
+                        <!-- Projects will be injected by JavaScript -->
+                    </div>
+                </section>
 
-    .profile-img-duplication img.dup1 {
-      z-index: 1;
-      animation:
-        pulse 10s infinite alternate,
-        duplicate-left 4s infinite alternate;
-    }
+                <!-- CTA Section -->
+                <section class="cta">
+                    <a
+                        href="cv_eng.pdf"
+                        class="btn-cv"
+                        id="cv-button"
+                        download
+                        data-i18n="cvButton"
+                        >Download CV</a
+                    >
+                </section>
+            </main>
 
-    .profile-img-duplication img.dup2 {
-      z-index: 2;
-      animation:
-        pulse 10s infinite alternate,
-        duplicate-right 4s infinite alternate;
-    }
-
-    @keyframes duplicate-left {
-
-      0%,
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-
-      40% {
-        transform: translateX(-30px);
-        opacity: 0.5;
-      }
-
-      60% {
-        transform: translateX(-30px);
-        opacity: 0.5;
-      }
-    }
-
-    @keyframes duplicate-right {
-
-      0%,
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-
-      40% {
-        transform: translateX(30px);
-        opacity: 0.5;
-      }
-
-      60% {
-        transform: translateX(30px);
-        opacity: 0.5;
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        filter: brightness(150%) saturate(200%) hue-rotate(0deg);
-        border-style: dashed;
-        border-color: #ff00ff;
-      }
-
-      20% {
-        filter: contrast(200%) brightness(150%) blur(2px) hue-rotate(90deg);
-        border-style: double;
-        border-color: #00ffff;
-      }
-
-      40% {
-        filter: sepia(50%) brightness(150%) contrast(150%) hue-rotate(180deg);
-        border-style: solid;
-        border-color: #ff0099;
-      }
-
-      60% {
-        filter: invert(75%) saturate(200%) brightness(150%) blur(1px);
-        border-style: dotted;
-        border-color: #00ff99;
-      }
-
-      80% {
-        filter: contrast(200%) brightness(200%) hue-rotate(270deg) saturate(300%);
-        border-style: groove;
-        border-color: #ff00ff;
-      }
-
-      100% {
-        filter: brightness(150%) saturate(200%) hue-rotate(360deg);
-        border-style: dashed;
-        border-color: #00ffff;
-      }
-    }
-
-    main {
-      max-width: 800px;
-      width: 100%;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    .project-preview {
-      margin-top: 1rem;
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
-
-    .project-preview iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1rem 0;
-    }
-
-    .social-icons img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .social-icons a:hover {
-      transform: translateY(-3px);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: black;
-        color: #f3f3f3;
-      }
-
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      a,
-      em,
-      strong,
-      ul,
-      li,
-      footer {
-        color: #f3f3f3 !important;
-      }
-
-      a {
-        text-decoration: underline;
-      }
-
-      .project-preview {
-        background: #1a1a1a;
-      }
-
-      .social-icons img {
-        filter: invert(70%);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .project-preview {
-        padding-bottom: 150%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <div class="profile-img-duplication">
-      <img class="dup1" src="assets/pictures/profile5.png" alt="Juan Manuel Daza" />
-      <img class="dup2" src="assets/pictures/profile5.png" alt="Juan Manuel Daza duplicate" />
-    </div>
-    <h1>Juan Manuel Daza</h1>
-    <p>Software Developer</p>
-  </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I am a Full Stack Web Developer with over 4 years of experience, specializing in technologies such as HTML, CSS,
-        JavaScript, PHP, Node.js, and Python, as well as frameworks and libraries like Vue, React, CodeIgniter, Django,
-        and Nest.js. I enjoy solving complex problems and continuously learning to stay at the forefront of the
-        ever-changing technological landscape.
-      </p>
-      <p>
-        My experience in poetry, music journalism, teaching, and cultural management brings a unique perspective to my
-        work, combining creativity with technical expertise. I am driven by the desire to transform the way we interact
-        with technology, merging innovation and art to create meaningful solutions.
-      </p>
-    </section>
-    <section>
-      <h2>Fun Projects</h2>
-      <div>
-        <strong><a href="https://github.com/juanmanueldaza/wallpapers" target="_blank">Wallpapers</a></strong> — 35mm
-        analog photography.<br />
-        <a href="https://wallpapers.ultravietnamita.com.ar" target="_blank">wallpapers.ultravietnamita.com.ar</a>
-        <div class="project-preview">
-          <iframe src="https://wallpapers.ultravietnamita.com.ar" title="Wallpapers Project" loading="lazy"></iframe>
+            <!-- Footer -->
+            <footer>
+                <div class="social-icons" id="social-icons">
+                    <!-- Social icons will be injected by JavaScript -->
+                </div>
+                <p class="easter-egg" id="easter-egg" title="Click me!">
+                    You fight like a dairy farmer.
+                </p>
+            </footer>
         </div>
-      </div>
-      <div style="margin-top:2rem;">
-        <strong><a href="https://github.com/roofsonfire/pokedex" target="_blank">Pokédex</a></strong> — Interactive
-        Pokémon app with <em>Roofs on Fire</em>.<br />
-        <a href="https://roofsonfire.github.io/pokedex/" target="_blank">roofsonfire.github.io/pokedex/</a>
-        <div class="project-preview">
-          <iframe src="https://roofsonfire.github.io/pokedex/" title="Pokedex Project" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h2>What Drives Me</h2>
-      <p>
-        I aim to grow as an <strong>innovative software developer</strong>, building solutions that inspire connection
-        and curiosity.
-      </p>
-    </section>
-  </main>
-  <footer>
-    <div class="social-icons">
-      <a href="https://linkedin.com/in/juanmanueldaza" target="_blank" title="LinkedIn">
-        <img src="assets/icons/linkedin.svg" alt="LinkedIn">
-      </a>
-      <a href="https://github.com/juanmanueldaza" target="_blank" title="GitHub">
-        <img src="assets/icons/square-github.svg" alt="GitHub">
-      </a>
-      <a href="https://gitlab.com/juanmanueldaza" target="_blank" title="GitLab">
-        <img src="assets/icons/square-gitlab.svg" alt="GitLab">
-      </a>
-      <a href="mailto:juanmanueldaza@gmail.com" title="Email">
-        <img src="assets/icons/envelope.svg" alt="Email">
-      </a>
-    </div>
-    <p>Built with ❤️ and Terminal CSS</p>
-  </footer>
-  <script>
-    const profileImgs = document.querySelectorAll('.profile-img-duplication img');
-    let currentImage = 5;
-    function rotateProfileImage() {
-      currentImage = currentImage === 5 ? 1 : currentImage + 1;
-      profileImgs.forEach(img => {
-        img.style.opacity = '0.5';
-        setTimeout(() => {
-          img.src = `assets/pictures/profile${currentImage}.png`;
-          img.style.opacity = '1';
-        }, 250);
-      });
-    }
-    setInterval(rotateProfileImage, 3000);
-    profileImgs.forEach(img => {
-      img.style.transition = 'opacity 0.5s ease-in-out';
-    });
-  </script>
-</body>
 
+        <!-- Scripts -->
+        <script type="module" src="js/main.js"></script>
+    </body>
 </html>
