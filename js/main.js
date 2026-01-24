@@ -1,5 +1,12 @@
 // content and socials are loaded as globals from content.js
 
+// GA4 event tracking helper
+const track = (eventName, params = {}) => {
+  if (typeof gtag !== "undefined") {
+    gtag("event", eventName, params);
+  }
+};
+
 const App = {
   currentLang: "en",
 
@@ -32,6 +39,11 @@ const App = {
 
   setLanguage(lang) {
     if (!content[lang]) return;
+
+    // Track language switch
+    if (lang !== this.currentLang) {
+      track("language_switch", { from: this.currentLang, to: lang });
+    }
 
     this.currentLang = lang;
     localStorage.setItem("preferredLang", lang);
@@ -97,13 +109,15 @@ const App = {
         <h3>${project.name}</h3>
         <p>${project.description}</p>
         <div class="project-links">
-          <a href="${project.url}" target="_blank" rel="noopener noreferrer">
+          <a href="${project.url}" target="_blank" rel="noopener noreferrer"
+             onclick="track('project_click', {project: '${project.name}', type: 'visit'})">
             Visit
           </a>
           ${
             project.github
               ? `
-            <a href="${project.github}" target="_blank" rel="noopener noreferrer">
+            <a href="${project.github}" target="_blank" rel="noopener noreferrer"
+               onclick="track('project_click', {project: '${project.name}', type: 'github'})">
               GitHub
             </a>
           `
@@ -129,6 +143,7 @@ const App = {
         rel="noopener noreferrer"
         title="${social.name}"
         aria-label="${social.name}"
+        onclick="track('social_click', {platform: '${social.name.toLowerCase()}'})"
       >
         <img src="${social.icon}" alt="${social.name}" width="28" height="28">
       </a>
@@ -145,10 +160,19 @@ const App = {
       });
     });
 
+    // CV download tracking
+    const cvButton = document.getElementById("cv-button");
+    if (cvButton) {
+      cvButton.addEventListener("click", () => {
+        track("cv_download", { language: this.currentLang });
+      });
+    }
+
     // Easter egg toggle
     const easterEgg = document.getElementById("easter-egg");
     if (easterEgg) {
       easterEgg.addEventListener("click", () => {
+        track("easter_egg_click");
         const current = easterEgg.textContent;
         const alt = easterEgg.dataset.alt;
         easterEgg.textContent = alt;
