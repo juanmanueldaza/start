@@ -7,6 +7,72 @@ const track = (eventName, params = {}) => {
   }
 };
 
+// Consent Manager for GDPR compliance
+const ConsentManager = {
+  STORAGE_KEY: "cookie_consent",
+
+  init() {
+    const consent = this.getConsent();
+    if (consent === null) {
+      this.showBanner();
+    } else {
+      this.applyConsent(consent);
+    }
+    this.bindEvents();
+  },
+
+  getConsent() {
+    const stored = localStorage.getItem(this.STORAGE_KEY);
+    if (stored === null) return null;
+    return stored === "granted";
+  },
+
+  setConsent(granted) {
+    localStorage.setItem(this.STORAGE_KEY, granted ? "granted" : "denied");
+    this.applyConsent(granted);
+    this.hideBanner();
+  },
+
+  applyConsent(granted) {
+    const consentState = granted ? "granted" : "denied";
+    if (typeof gtag !== "undefined") {
+      gtag("consent", "update", {
+        ad_storage: consentState,
+        ad_user_data: consentState,
+        ad_personalization: consentState,
+        analytics_storage: consentState,
+      });
+    }
+  },
+
+  showBanner() {
+    const banner = document.getElementById("cookie-banner");
+    if (banner) banner.hidden = false;
+  },
+
+  hideBanner() {
+    const banner = document.getElementById("cookie-banner");
+    if (banner) banner.hidden = true;
+  },
+
+  bindEvents() {
+    document.getElementById("cookie-accept")?.addEventListener("click", () => {
+      this.setConsent(true);
+      track("cookie_consent", { action: "accept" });
+    });
+
+    document.getElementById("cookie-reject")?.addEventListener("click", () => {
+      this.setConsent(false);
+    });
+
+    document
+      .getElementById("cookie-settings")
+      ?.addEventListener("click", () => {
+        this.showBanner();
+      });
+  },
+};
+
 const App = {
   currentLang: "en",
 
@@ -15,6 +81,7 @@ const App = {
     this.renderSocials();
     this.render();
     this.bindEvents();
+    ConsentManager.init();
   },
 
   detectLanguage() {
@@ -66,7 +133,7 @@ const App = {
     document.documentElement.lang = c.lang;
     document.title = `${c.title} - Portfolio`;
 
-    // Update all data-i18n elements
+    // Update all data-i18n elements (including cookie banner)
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.dataset.i18n;
       if (c[key]) {

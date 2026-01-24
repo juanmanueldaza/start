@@ -54,6 +54,13 @@ const content = {
     cvFile: "cv_eng.pdf",
     footer: "You fight like a dairy farmer.",
     footerAlt: "How appropriate. You fight like a cow.",
+    cookieTitle: "Cookie Settings",
+    cookieText:
+      "We use cookies to analyze site traffic and improve your experience. You can accept or reject analytics cookies.",
+    cookieAccept: "Accept All",
+    cookieReject: "Reject All",
+    cookieSettings: "Cookie Settings",
+    cookiePolicyLink: "Cookie Policy",
   },
   es: {
     lang: "es",
@@ -111,6 +118,13 @@ const content = {
     cvFile: "cv_es.pdf",
     footer: "Peleas como un granjero.",
     footerAlt: "Qué apropiado. Peleas como una vaca.",
+    cookieTitle: "Configuración de Cookies",
+    cookieText:
+      "Usamos cookies para analizar el tráfico del sitio y mejorar tu experiencia. Puedes aceptar o rechazar las cookies de análisis.",
+    cookieAccept: "Aceptar Todo",
+    cookieReject: "Rechazar Todo",
+    cookieSettings: "Configuración de Cookies",
+    cookiePolicyLink: "Política de Cookies",
   },
 };
 
