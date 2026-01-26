@@ -5,7 +5,7 @@ const content = {
     title: "Juan Manuel Daza",
     subtitle: "Full Stack AI Engineer",
     aboutTitle: "About",
-    bio: "I'm not a pirate, but I've been chasing treasure for 6 years—building digital solutions and hunting Agentic AI. I studied words before I learned code. That's why I can make machines speak human.",
+    bio: "I'm not a pirate, but I've been chasing treasure for 6 years—building AI-powered solutions and hunting Agentic AI as a Full Stack AI Engineer. I studied words before I learned code. That's why I can make machines speak human.",
     projectsTitle: "Projects",
     projects: [
       {
@@ -68,7 +68,7 @@ const content = {
     title: "Juan Manuel Daza",
     subtitle: "Full Stack AI Engineer",
     aboutTitle: "Sobre mi",
-    bio: "No soy pirata, pero llevo 6 años buscando tesoros—construyendo soluciones digitales y cazando IA Agéntica. Estudié palabras antes que código. Por eso puedo hacer que las máquinas hablen humano.",
+    bio: "No soy pirata, pero llevo 6 años buscando tesoros—construyendo soluciones impulsadas por IA y cazando IA Agéntica como Full Stack AI Engineer. Estudié palabras antes que código. Por eso puedo hacer que las máquinas hablen humano.",
     projectsTitle: "Proyectos",
     projects: [
       {
