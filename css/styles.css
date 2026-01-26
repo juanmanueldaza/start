@@ -3,9 +3,8 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Google Fonts
+   Google Fonts - Loaded in HTML for better performance
    -------------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
 
 /* --------------------------------------------------------------------------
    CSS Custom Properties (Color Palette)
@@ -256,6 +255,77 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Section
+   -------------------------------------------------------------------------- */
+.faq {
+    padding: var(--space-lg) 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    text-align: center;
+}
+
+.faq-list {
+    margin-top: var(--space-md);
+}
+
+.faq-list details {
+    background: var(--midnight-blue);
+    border: 2px solid var(--tropical-teal);
+    border-radius: 4px;
+    margin-bottom: var(--space-sm);
+    transition: border-color var(--transition-fast);
+}
+
+.faq-list details:hover,
+.faq-list details[open] {
+    border-color: var(--pirate-gold);
+}
+
+.faq-list summary {
+    font-family: var(--font-pixel);
+    font-size: 0.5rem;
+    color: var(--pirate-gold);
+    padding: var(--space-sm);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: "+";
+    font-size: 1rem;
+    color: var(--tropical-teal);
+    transition: transform var(--transition-fast);
+}
+
+.faq-list details[open] summary::after {
+    content: "−";
+    color: var(--pirate-gold);
+}
+
+.faq-list details p {
+    padding: 0 var(--space-sm) var(--space-sm);
+    font-size: 1rem;
+    color: var(--moonlit-sand);
+    line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+    .faq-list summary {
+        font-size: 0.625rem;
+    }
 }
 
 /* --------------------------------------------------------------------------

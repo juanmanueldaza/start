@@ -52,6 +52,16 @@ const content = {
     ],
     cvButton: "Download CV",
     cvFile: "cv_eng.pdf",
+    faqTitle: "FAQ",
+    faq1q: "What is Agentic AI?",
+    faq1a:
+      "Agentic AI refers to AI systems that can autonomously plan, reason, and execute multi-step tasks with minimal human intervention. Unlike traditional AI that responds to single prompts, agentic AI can break down complex goals, use tools, and adapt its approach based on results.",
+    faq2q: "What services do you offer as an AI Engineer?",
+    faq2a:
+      "I specialize in building AI-powered applications, developing agentic AI systems, creating CLI tools for data processing, and full-stack development with AI integration. I focus on practical solutions that make complex AI accessible.",
+    faq3q: "What is linkedin2md and how does it work?",
+    faq3a:
+      "linkedin2md is a CLI tool that converts LinkedIn data exports into clean Markdown format, making your professional data ready for AI analysis, resume building, or portfolio generation. Simply export your LinkedIn data and run the tool.",
     footer: "You fight like a dairy farmer.",
     footerAlt: "How appropriate. You fight like a cow.",
     cookieTitle: "Cookie Settings",
@@ -116,6 +126,16 @@ const content = {
     ],
     cvButton: "Descargar CV",
     cvFile: "cv_es.pdf",
+    faqTitle: "Preguntas Frecuentes",
+    faq1q: "¿Qué es la IA Agéntica?",
+    faq1a:
+      "La IA Agéntica se refiere a sistemas de IA que pueden planificar, razonar y ejecutar tareas de múltiples pasos de forma autónoma con mínima intervención humana. A diferencia de la IA tradicional que responde a indicaciones individuales, la IA agéntica puede descomponer objetivos complejos, usar herramientas y adaptar su enfoque según los resultados.",
+    faq2q: "¿Qué servicios ofreces como AI Engineer?",
+    faq2a:
+      "Me especializo en construir aplicaciones impulsadas por IA, desarrollar sistemas de IA agéntica, crear herramientas CLI para procesamiento de datos, y desarrollo full-stack con integración de IA. Me enfoco en soluciones prácticas que hacen la IA compleja accesible.",
+    faq3q: "¿Qué es linkedin2md y cómo funciona?",
+    faq3a:
+      "linkedin2md es una herramienta CLI que convierte exportaciones de datos de LinkedIn a formato Markdown limpio, preparando tus datos profesionales para análisis con IA, creación de currículums o generación de portafolios. Simplemente exporta tus datos de LinkedIn y ejecuta la herramienta.",
     footer: "Peleas como un granjero.",
     footerAlt: "Qué apropiado. Peleas como una vaca.",
     cookieTitle: "Configuración de Cookies",
@@ -133,26 +153,31 @@ const socials = [
     name: "LinkedIn",
     url: "https://linkedin.com/in/juanmanueldaza",
     icon: "assets/icons/linkedin.svg",
+    alt: "Connect with Juan Manuel Daza on LinkedIn",
   },
   {
     name: "GitHub",
     url: "https://github.com/juanmanueldaza",
     icon: "assets/icons/square-github.svg",
+    alt: "View Juan Manuel Daza's GitHub repositories and open source projects",
   },
   {
     name: "GitLab",
     url: "https://gitlab.com/juanmanueldaza",
     icon: "assets/icons/square-gitlab.svg",
+    alt: "View Juan Manuel Daza's GitLab profile and contributions",
   },
   {
     name: "PyPI",
     url: "https://pypi.org/user/juanmanueldaza/",
     icon: "assets/icons/pypi.svg",
+    alt: "Browse Juan Manuel Daza's Python packages on PyPI",
   },
   {
     name: "Email",
     url: "mailto:juanmanueldaza@gmail.com",
     icon: "assets/icons/envelope.svg",
+    alt: "Send an email to Juan Manuel Daza",
   },
 ];
 

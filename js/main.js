@@ -209,10 +209,10 @@ const App = {
         target="_blank"
         rel="noopener noreferrer"
         title="${social.name}"
-        aria-label="${social.name}"
+        aria-label="${social.alt || social.name}"
         onclick="track('social_click', {platform: '${social.name.toLowerCase()}'})"
       >
-        <img src="${social.icon}" alt="${social.name}" width="28" height="28">
+        <img src="${social.icon}" alt="${social.alt || social.name}" width="28" height="28" loading="lazy">
       </a>
     `,
       )

@@ -26,6 +26,16 @@
             src="https://www.googletagmanager.com/gtag/js?id=G-PV6HF4TEQ7"
         ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="Daza AI" />
         <meta
             name="description"
             content="Juan Manuel Daza - Full Stack AI Engineer & Developer specializing in AI development, agentic AI systems, and building intelligent digital solutions."
@@ -100,6 +110,11 @@
             name="twitter:image:alt"
             content="Juan Manuel Daza - Full Stack AI Engineer & Developer"
         />
+        <!-- Enhanced Twitter Card Labels -->
+        <meta name="twitter:label1" content="Expertise" />
+        <meta name="twitter:data1" content="AI Engineering & Agentic AI" />
+        <meta name="twitter:label2" content="Location" />
+        <meta name="twitter:data2" content="Argentina" />
 
         <!-- Structured Data: ProfilePage + Person -->
         <script type="application/ld+json">
@@ -125,6 +140,18 @@
                         "height": 500
                     },
                     "email": "mailto:juanmanueldaza@gmail.com",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "contactType": "professional inquiries",
+                        "email": "juanmanueldaza@gmail.com",
+                        "availableLanguage": ["English", "Spanish"],
+                        "areaServed": "Worldwide"
+                    },
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "AR",
+                        "addressLocality": "Argentina"
+                    },
                     "knowsAbout": [
                         "Artificial Intelligence",
                         "AI Engineering",
@@ -167,7 +194,7 @@
             }
         </script>
 
-        <!-- Structured Data: WebSite -->
+        <!-- Structured Data: WebSite with Speakable -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -179,159 +206,240 @@
                 "publisher": {
                     "@id": "https://daza.ar/#person"
                 },
-                "inLanguage": ["en", "es"]
+                "inLanguage": ["en", "es"],
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": [".hero", ".about", ".subtitle"]
+                }
             }
         </script>
 
-        <!-- Structured Data: Projects -->
+        <!-- Structured Data: BreadcrumbList -->
         <script type="application/ld+json">
-            [
-                {
-                    "@context": "https://schema.org",
-                    "@type": "CreativeWork",
-                    "name": "Daza Wallpapers",
-                    "description": "Minimalist wallpapers from 35mm analog photography by Juan Manuel Daza",
-                    "url": "https://wallpapers.daza.ar",
-                    "creator": {
-                        "@id": "https://daza.ar/#person"
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://daza.ar/"
                     },
-                    "genre": "Photography",
-                    "keywords": [
-                        "wallpapers",
-                        "minimalist",
-                        "analog photography",
-                        "35mm",
-                        "daza wallpapers"
-                    ]
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Projects",
+                        "item": "https://daza.ar/#projects"
+                    }
+                ]
+            }
+        </script>
+
+        <!-- Structured Data: ItemList of Projects -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "AI Engineering Projects by Juan Manuel Daza",
+                "description": "Portfolio of AI development tools and applications",
+                "numberOfItems": 6,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "name": "Daza Wallpapers",
+                            "description": "Minimalist wallpapers from 35mm analog photography by Juan Manuel Daza",
+                            "url": "https://wallpapers.daza.ar",
+                            "creator": { "@id": "https://daza.ar/#person" },
+                            "genre": "Photography",
+                            "keywords": [
+                                "wallpapers",
+                                "minimalist",
+                                "analog photography",
+                                "35mm"
+                            ]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "SoftwareApplication",
+                            "name": "FutureProof",
+                            "description": "Career Intelligence System - Aggregate professional data and generate AI-optimized CVs",
+                            "url": "https://github.com/juanmanueldaza/futureproof",
+                            "applicationCategory": "DeveloperApplication",
+                            "operatingSystem": "Cross-platform",
+                            "author": { "@id": "https://daza.ar/#person" },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD"
+                            },
+                            "codeRepository": "https://github.com/juanmanueldaza/futureproof"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "SoftwareApplication",
+                            "name": "linkedin2md",
+                            "description": "CLI tool to convert LinkedIn data exports to Markdown for AI analysis",
+                            "url": "https://linkedin2md.daza.ar",
+                            "applicationCategory": "DeveloperApplication",
+                            "operatingSystem": "Cross-platform",
+                            "author": { "@id": "https://daza.ar/#person" },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD"
+                            },
+                            "codeRepository": "https://github.com/juanmanueldaza/linkedin2md",
+                            "downloadUrl": "https://pypi.org/project/linkedin2md/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "SoftwareApplication",
+                            "name": "github2md",
+                            "description": "CLI tool to convert GitHub profiles to Markdown for AI analysis",
+                            "url": "https://github2md.daza.ar",
+                            "applicationCategory": "DeveloperApplication",
+                            "operatingSystem": "Cross-platform",
+                            "author": { "@id": "https://daza.ar/#person" },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD"
+                            },
+                            "codeRepository": "https://github.com/juanmanueldaza/github2md"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "SoftwareApplication",
+                            "name": "gitlab2md",
+                            "description": "CLI tool to convert GitLab profiles to Markdown for AI analysis",
+                            "url": "https://gitlab2md.daza.ar",
+                            "applicationCategory": "DeveloperApplication",
+                            "operatingSystem": "Cross-platform",
+                            "author": { "@id": "https://daza.ar/#person" },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD"
+                            },
+                            "codeRepository": "https://github.com/juanmanueldaza/gitlab2md"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "WebApplication",
+                            "name": "Pokedex",
+                            "description": "Interactive Pokemon encyclopedia built with modern web technologies",
+                            "url": "https://roofsonfire.github.io/pokedex/",
+                            "applicationCategory": "EntertainmentApplication",
+                            "operatingSystem": "Web browser",
+                            "author": { "@id": "https://daza.ar/#person" },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD"
+                            },
+                            "codeRepository": "https://github.com/roofsonfire/pokedex"
+                        }
+                    }
+                ]
+            }
+        </script>
+
+        <!-- Structured Data: HowTo for linkedin2md -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "name": "How to Convert LinkedIn Data to Markdown with linkedin2md",
+                "description": "Step-by-step guide to export your LinkedIn profile data and convert it to Markdown format for AI analysis",
+                "totalTime": "PT5M",
+                "tool": {
+                    "@type": "HowToTool",
+                    "name": "linkedin2md CLI"
                 },
-                {
-                    "@context": "https://schema.org",
-                    "@type": "SoftwareApplication",
-                    "name": "FutureProof",
-                    "description": "Career Intelligence System - Aggregate professional data and generate AI-optimized CVs",
-                    "url": "https://github.com/juanmanueldaza/futureproof",
-                    "applicationCategory": "DeveloperApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@id": "https://daza.ar/#person"
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Export LinkedIn Data",
+                        "text": "Go to LinkedIn Settings > Data Privacy > Get a copy of your data. Request your data export and wait for the download link.",
+                        "url": "https://linkedin2md.daza.ar/#step1"
                     },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "0",
-                        "priceCurrency": "USD"
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Install linkedin2md",
+                        "text": "Install the tool using pip: pip install linkedin2md",
+                        "url": "https://linkedin2md.daza.ar/#step2"
                     },
-                    "codeRepository": "https://github.com/juanmanueldaza/futureproof",
-                    "keywords": [
-                        "career intelligence",
-                        "AI CV",
-                        "resume generator",
-                        "professional data",
-                        "futureproof"
-                    ]
-                },
-                {
-                    "@context": "https://schema.org",
-                    "@type": "SoftwareApplication",
-                    "name": "linkedin2md",
-                    "description": "CLI tool to convert LinkedIn data exports to Markdown for AI analysis",
-                    "url": "https://linkedin2md.daza.ar",
-                    "applicationCategory": "DeveloperApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@id": "https://daza.ar/#person"
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Run the Conversion",
+                        "text": "Run linkedin2md with your exported ZIP file: linkedin2md your-linkedin-data.zip",
+                        "url": "https://linkedin2md.daza.ar/#step3"
                     },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "0",
-                        "priceCurrency": "USD"
+                    {
+                        "@type": "HowToStep",
+                        "position": 4,
+                        "name": "Use Your Markdown",
+                        "text": "Your LinkedIn data is now in clean Markdown format, ready for AI analysis, resume building, or portfolio generation.",
+                        "url": "https://linkedin2md.daza.ar/#step4"
+                    }
+                ]
+            }
+        </script>
+
+        <!-- Structured Data: FAQPage -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is Agentic AI?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Agentic AI refers to AI systems that can autonomously plan, reason, and execute multi-step tasks with minimal human intervention. Unlike traditional AI that responds to single prompts, agentic AI can break down complex goals, use tools, and adapt its approach based on results."
+                        }
                     },
-                    "codeRepository": "https://github.com/juanmanueldaza/linkedin2md",
-                    "keywords": [
-                        "linkedin",
-                        "markdown",
-                        "CLI tool",
-                        "data export",
-                        "AI analysis",
-                        "linkedin2md"
-                    ]
-                },
-                {
-                    "@context": "https://schema.org",
-                    "@type": "SoftwareApplication",
-                    "name": "github2md",
-                    "description": "CLI tool to convert GitHub profiles to Markdown for AI analysis",
-                    "url": "https://github2md.daza.ar",
-                    "applicationCategory": "DeveloperApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@id": "https://daza.ar/#person"
+                    {
+                        "@type": "Question",
+                        "name": "What services do you offer as an AI Engineer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "I specialize in building AI-powered applications, developing agentic AI systems, creating CLI tools for data processing, and full-stack development with AI integration. I focus on practical solutions that make complex AI accessible."
+                        }
                     },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "0",
-                        "priceCurrency": "USD"
-                    },
-                    "codeRepository": "https://github.com/juanmanueldaza/github2md",
-                    "keywords": [
-                        "github",
-                        "markdown",
-                        "CLI tool",
-                        "profile export",
-                        "AI analysis",
-                        "github2md"
-                    ]
-                },
-                {
-                    "@context": "https://schema.org",
-                    "@type": "SoftwareApplication",
-                    "name": "gitlab2md",
-                    "description": "CLI tool to convert GitLab profiles to Markdown for AI analysis",
-                    "url": "https://gitlab2md.daza.ar",
-                    "applicationCategory": "DeveloperApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@id": "https://daza.ar/#person"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "0",
-                        "priceCurrency": "USD"
-                    },
-                    "codeRepository": "https://github.com/juanmanueldaza/gitlab2md",
-                    "keywords": [
-                        "gitlab",
-                        "markdown",
-                        "CLI tool",
-                        "profile export",
-                        "AI analysis",
-                        "gitlab2md"
-                    ]
-                },
-                {
-                    "@context": "https://schema.org",
-                    "@type": "WebApplication",
-                    "name": "Pokedex",
-                    "description": "Interactive Pokemon encyclopedia built with modern web technologies",
-                    "url": "https://roofsonfire.github.io/pokedex/",
-                    "applicationCategory": "EntertainmentApplication",
-                    "operatingSystem": "Web browser",
-                    "author": {
-                        "@id": "https://daza.ar/#person"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "0",
-                        "priceCurrency": "USD"
-                    },
-                    "codeRepository": "https://github.com/roofsonfire/pokedex",
-                    "keywords": [
-                        "pokedex",
-                        "pokemon",
-                        "encyclopedia",
-                        "web application"
-                    ]
-                }
-            ]
+                    {
+                        "@type": "Question",
+                        "name": "What is linkedin2md and how does it work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "linkedin2md is a CLI tool that converts LinkedIn data exports into clean Markdown format, making your professional data ready for AI analysis, resume building, or portfolio generation. Simply export your LinkedIn data and run the tool."
+                        }
+                    }
+                ]
+            }
         </script>
 
         <!-- Favicon & Icons -->
@@ -347,8 +455,156 @@
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="css/styles.css" />
+        <!-- Preload Critical Assets -->
+        <link
+            rel="preload"
+            href="assets/pictures/profile5.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+            as="style"
+        />
+
+        <!-- Critical CSS for Above-Fold Content -->
+        <style>
+            :root {
+                --deep-sea: #0d1b2a;
+                --midnight-blue: #1b263b;
+                --tropical-teal: #415a77;
+                --moonlit-sand: #e0d8c0;
+                --parchment: #f5f0e1;
+                --pirate-gold: #ffd700;
+                --font-pixel: "Press Start 2P", monospace;
+                --font-body: "Cormorant Garamond", Georgia, serif;
+                --space-xs: 0.5rem;
+                --space-sm: 1rem;
+                --space-md: 1.5rem;
+                --space-lg: 2rem;
+            }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                font-size: 16px;
+            }
+            body {
+                font-family: var(--font-body);
+                font-size: 1.125rem;
+                line-height: 1.6;
+                color: var(--moonlit-sand);
+                background-color: var(--deep-sea);
+                min-height: 100vh;
+            }
+            .container {
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 var(--space-sm);
+            }
+            header {
+                padding: var(--space-sm) 0;
+            }
+            .lang-toggle {
+                display: flex;
+                justify-content: flex-end;
+                gap: var(--space-xs);
+                font-family: var(--font-pixel);
+                font-size: 0.625rem;
+            }
+            .lang-toggle button {
+                background: none;
+                border: none;
+                color: var(--tropical-teal);
+                font-family: inherit;
+                font-size: inherit;
+                cursor: pointer;
+                padding: var(--space-xs);
+            }
+            .lang-toggle button.active {
+                color: var(--pirate-gold);
+            }
+            .hero {
+                text-align: center;
+                padding: var(--space-lg) 0;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 8px;
+                border: 3px solid var(--pirate-gold);
+                margin: 0 auto var(--space-md);
+                object-fit: cover;
+            }
+            h1 {
+                font-family: var(--font-pixel);
+                font-size: 1rem;
+                color: var(--parchment);
+                margin-bottom: var(--space-xs);
+            }
+            .subtitle {
+                font-family: var(--font-body);
+                font-size: 1.25rem;
+                font-style: italic;
+                color: var(--tropical-teal);
+            }
+            .skip-link {
+                position: absolute;
+                top: -100%;
+                left: 0;
+                background: var(--pirate-gold);
+                color: var(--deep-sea);
+                padding: var(--space-xs) var(--space-sm);
+                font-family: var(--font-pixel);
+                font-size: 0.625rem;
+                z-index: 100;
+            }
+            .skip-link:focus {
+                top: 0;
+            }
+            @media (min-width: 768px) {
+                h1 {
+                    font-size: 1.25rem;
+                }
+                .hero {
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    gap: var(--space-lg);
+                }
+                .profile-image {
+                    margin: 0;
+                }
+            }
+        </style>
+
+        <!-- Google Fonts with async loading -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+            media="print"
+            onload="this.media = 'all'"
+        />
+        <noscript
+            ><link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        /></noscript>
+
+        <!-- Non-Critical Styles (loaded asynchronously) -->
+        <link
+            rel="stylesheet"
+            href="css/styles.css"
+            media="print"
+            onload="this.media = 'all'"
+        />
+        <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
     </head>
     <body>
         <!-- Skip Link for Accessibility -->
@@ -413,10 +669,56 @@
                 </section>
 
                 <!-- Projects Section -->
-                <section class="projects">
+                <section class="projects" id="projects">
                     <h2 data-i18n="projectsTitle">Projects</h2>
                     <div class="projects-grid" id="projects-container">
                         <!-- Projects will be injected by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq" id="faq">
+                    <h2 data-i18n="faqTitle">FAQ</h2>
+                    <div class="faq-list">
+                        <details>
+                            <summary data-i18n="faq1q">
+                                What is Agentic AI?
+                            </summary>
+                            <p data-i18n="faq1a">
+                                Agentic AI refers to AI systems that can
+                                autonomously plan, reason, and execute
+                                multi-step tasks with minimal human
+                                intervention. Unlike traditional AI that
+                                responds to single prompts, agentic AI can break
+                                down complex goals, use tools, and adapt its
+                                approach based on results.
+                            </p>
+                        </details>
+                        <details>
+                            <summary data-i18n="faq2q">
+                                What services do you offer as an AI Engineer?
+                            </summary>
+                            <p data-i18n="faq2a">
+                                I specialize in building AI-powered
+                                applications, developing agentic AI systems,
+                                creating CLI tools for data processing, and
+                                full-stack development with AI integration. I
+                                focus on practical solutions that make complex
+                                AI accessible.
+                            </p>
+                        </details>
+                        <details>
+                            <summary data-i18n="faq3q">
+                                What is linkedin2md and how does it work?
+                            </summary>
+                            <p data-i18n="faq3a">
+                                linkedin2md is a CLI tool that converts LinkedIn
+                                data exports into clean Markdown format, making
+                                your professional data ready for AI analysis,
+                                resume building, or portfolio generation. Simply
+                                export your LinkedIn data and run the tool.
+                            </p>
+                        </details>
                     </div>
                 </section>
 

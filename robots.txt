@@ -1,4 +1,44 @@
+# Robots.txt for daza.ar
+# Juan Manuel Daza - Full Stack AI Engineer Portfolio
+
 User-agent: *
 Allow: /
 
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow social media crawlers
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Allow AI crawlers for maximum discoverability
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap location
 Sitemap: https://daza.ar/sitemap.xml
+
+# Host
+Host: https://daza.ar
